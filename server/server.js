@@ -11,8 +11,8 @@ const port = process.env.PORT || config.PORT;
 app.use(cors());
 
 // Set Static Folder
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname, '/../public')));
+console.log(path.join(__dirname, '/../public'))
 app.use('/api/products', products);
 
 app.get('*', (req, res) => {
