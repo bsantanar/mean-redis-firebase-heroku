@@ -1,0 +1,9 @@
+<img src="/assets/banco.png" class="img-fluid mx-auto d-block" alt="home">
+<ng-container *ngIf="!(authService.user | async)">
+    <h2 class="text-center">Please Login or Register with your email</h2>
+    <button class="btn btn-primary btn-lg mx-auto d-block" (click)="goLogin()">Authenticate</button>
+</ng-container>
+<ng-container *ngIf="authService.user | async">
+    <h2 class="text-center">Try the products features!</h2>
+    <button class="btn btn-primary btn-lg mx-auto d-block" (click)="goProducts()">Products</button>
+</ng-container>

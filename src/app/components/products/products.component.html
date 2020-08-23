@@ -1,0 +1,35 @@
+    <div class="text-center">
+      <h3>In this page you can get a list of products obtained from Ripley Api or a product picked randomly.</h3>
+      <p class="lead">This queries can be fetched from Ripley or Redis.</p>
+    </div>
+
+<!-- <div class="row">
+    <div class="col text-center">
+        <h3>In this page you can get a list of products obtained from Ripley Api or a product picked randomly.</h3>
+        <h4>This queries can be fetched from Ripley or Redis.</h4>
+    </div>
+</div> -->
+
+<div class="row mb-3">
+    <div class="col text-center">
+        <button [disabled]="loading" class="btn btn-outline-secondary" (click)="getMultipleProducts()">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Get list of products
+        </button>
+    </div>
+    <div class="col text-center">
+        <button [disabled]="loading" class="btn btn-outline-secondary" (click)="getProductBySku()">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Get a random product
+        </button>
+    </div>
+</div>
+
+<div class="card-data" *ngIf="productArray.length > 0">
+    <div *ngFor="let product of productArray">
+        <app-product-list [product]="product"></app-product-list>
+    </div>
+</div>
+<div *ngIf="product">
+        <app-product-detail [product]="product"></app-product-detail>
+</div>
