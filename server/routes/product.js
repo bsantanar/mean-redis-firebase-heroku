@@ -33,7 +33,7 @@ router.get('/:key', authMiddleware.checkToken, cacheMiddleware.cache, async (req
         await db.setex(products, JSON.stringify(data));
         return res.status(200).json({ ok:true, message: 'Fetched from ripley api', data});
     } catch (e) {
-        return res.status(500).json({ok: false, message: 'Internal server Error'})
+        return res.status(500).json({ok: false, message: 'Internal server Error', data: e.data})
     }
 });
 
