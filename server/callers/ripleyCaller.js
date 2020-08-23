@@ -8,7 +8,7 @@ module.exports.getMultipleProductsBySku = (stringSku) => {
             resolve(products);
         }).catch(err => {
             if( err.response ){
-                console.log(err.response.data);
+                console.log(err.request);
             }
             reject(err);
         });
@@ -21,7 +21,7 @@ module.exports.getProductBySku = (sku) => {
             resolve(product);
         }).catch(err => {
             if( err.response ){
-                console.log(err.response.data);
+                console.log(err.request);
             }
             reject(err);
         });
