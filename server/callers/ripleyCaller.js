@@ -7,7 +7,7 @@ module.exports.getMultipleProductsBySku = (stringSku) => {
         axios.get(`?partNumbers=${stringSku}`).then( products => {
             resolve(products);
         }).catch(err => {
-            console.log(err);
+            //console.log(err);
             reject(err);
         });
     });
@@ -18,7 +18,7 @@ module.exports.getProductBySku = (sku) => {
         axios.get(sku).then( product => {
             resolve(product);
         }).catch(err => {
-            console.log(err);
+            //console.log(err);
             reject(err);
         });
     });
